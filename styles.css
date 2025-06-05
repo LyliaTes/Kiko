@@ -1,0 +1,143 @@
+body{
+    margin:0;
+    padding: 0;
+    font-family: 'Dancing Script', cursive;
+    background: linear-gradient(100deg, #ff013c, #d16575);
+    color: #fff;
+    height : 100vh;
+    overflow:hidden;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    text-align: center;
+}
+h1{
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+.letter{
+    max-width:800px;
+    padding:20px;
+    font-size: 2rem;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+.typing{
+    border-right: .15rem solid #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 5s steps(40, end), blink .75s step-end infinite;
+}
+.hearts {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    opacity: 0.8;
+    transform: rotate(45deg);
+    animation: floatUp 10s infinite ease-in;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+button {
+    margin-top: 50px;
+    background-color: #ff4d88;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #e6005c;
+}
+#loveGif {
+    display: none;
+    margin-top: 30px;
+    border: 5px solid #ff99cc;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: #fff0f5;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: opacity 1s ease-in-out;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff0f5;
+    margin: 10% auto;
+    padding: 20px;
+    border: 4px solid #ff99cc;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    color: #ff4d88;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #e6005c;
+}
+@keyframes typing{
+    from {width:0}
+    to {width:100%} 
+}
+@keyframes blink{
+    50% {border-color: transparent;}
+}
+@keyframes floatUp{
+  0%   { transform: translateY(100vh); opacity: 0; }
+  50%  { opacity: 0.8; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
